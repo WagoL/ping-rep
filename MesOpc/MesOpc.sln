@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MesOpC2", "MesOpC2\MesOpC2.csproj", "{E85292A7-82AA-4A69-9554-79326B2B6936}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingTest", "PingTest\PingTest.csproj", "{88896E67-C468-43B6-B97B-1F3FF85CBBF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E85292A7-82AA-4A69-9554-79326B2B6936}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E85292A7-82AA-4A69-9554-79326B2B6936}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E85292A7-82AA-4A69-9554-79326B2B6936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88896E67-C468-43B6-B97B-1F3FF85CBBF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88896E67-C468-43B6-B97B-1F3FF85CBBF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88896E67-C468-43B6-B97B-1F3FF85CBBF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88896E67-C468-43B6-B97B-1F3FF85CBBF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
