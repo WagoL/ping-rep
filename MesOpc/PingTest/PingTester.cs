@@ -9,7 +9,7 @@ namespace PingTest
 {
     public class PingTester
     {
-        private string _ipAddress;
+        private readonly string _ipAddress;
 
         public PingTester(string ip)
         {
