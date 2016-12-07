@@ -80,6 +80,12 @@
       <DependentUpon>201612071447453_dduon.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PingTest\PingTest.csproj">
+      <Project>{88896e67-c468-43b6-b97b-1f3ff85cbbf7}</Project>
+      <Name>PingTest</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

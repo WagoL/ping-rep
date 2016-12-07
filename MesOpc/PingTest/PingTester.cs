@@ -9,11 +9,11 @@ namespace PingTest
 {
     public class PingTester
     {
-        private readonly string _ipAddress;
+        public string IpAddress { get; }
 
         public PingTester(string ip)
         {
-            _ipAddress = ip;
+            IpAddress = ip;
         }
 
         public bool Execute()
@@ -22,7 +22,7 @@ namespace PingTest
             Ping pinger = new Ping();
             try
             {
-                PingReply reply = pinger.Send(_ipAddress);
+                PingReply reply = pinger.Send(IpAddress);
                 pingAble = reply.Status == IPStatus.Success;
             }
             catch (PingException) { }
