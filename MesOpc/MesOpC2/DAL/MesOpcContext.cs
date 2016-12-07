@@ -10,8 +10,8 @@ namespace DAL
 {
     public class MesOpcContext : DbContext
     {
-        public MesOpcContext() : base(){} //empty con for ef
+        public MesOpcContext() { } //empty con for ef
 
-        public List<Reply> Replies { get; set; }
+        public DbSet<Reply> Replies { get; set; }
     }
 }

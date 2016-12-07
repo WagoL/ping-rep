@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MesOpc.DAL;
-using MesOpc.DAL.Models;
+using DAL;
+using DAL.Models;
 
-namespace MesOpc
+namespace MesOpC2
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             using (var db = new MesOpcContext())
             {
-                db.Replies.Add(new Reply {Available = false,IpAddress = "10.0.32.34",Timestamp = DateTime.Now});
+                db.Replies.Add(new Reply {Available = false, IpAddress = "10.0.33.32", Timestamp = DateTime.Now});
                 db.SaveChanges();
             }
         }

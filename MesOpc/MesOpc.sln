@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MesOpc", "MesOpc\MesOpc.csproj", "{FBEF51E3-E395-4E5E-9E56-4E7669C8544F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{241C31C7-2B71-4248-8D6D-0DE3E903F38B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MesOpC2", "MesOpC2\MesOpC2.csproj", "{E85292A7-82AA-4A69-9554-79326B2B6936}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FBEF51E3-E395-4E5E-9E56-4E7669C8544F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FBEF51E3-E395-4E5E-9E56-4E7669C8544F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FBEF51E3-E395-4E5E-9E56-4E7669C8544F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FBEF51E3-E395-4E5E-9E56-4E7669C8544F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{241C31C7-2B71-4248-8D6D-0DE3E903F38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{241C31C7-2B71-4248-8D6D-0DE3E903F38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{241C31C7-2B71-4248-8D6D-0DE3E903F38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{241C31C7-2B71-4248-8D6D-0DE3E903F38B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E85292A7-82AA-4A69-9554-79326B2B6936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E85292A7-82AA-4A69-9554-79326B2B6936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E85292A7-82AA-4A69-9554-79326B2B6936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E85292A7-82AA-4A69-9554-79326B2B6936}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
