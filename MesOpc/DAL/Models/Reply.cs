@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    class Reply
+    public class Reply
     {
+        public int Id { get; set; }
+        public DateTime Timestamp { get; set; }
+        public string IpAddress { get; set; }
+        public bool Available { get; set; }
     }
 }
