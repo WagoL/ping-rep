@@ -10,7 +10,7 @@ namespace DAL
 {
     public class MesOpcContext : DbContext
     {
-        public MesOpcContext() { } //empty con for ef
+        public MesOpcContext() : base("monitorDb") { } //empty con for ef
 
         public DbSet<Reply> Replies { get; set; }
     }
