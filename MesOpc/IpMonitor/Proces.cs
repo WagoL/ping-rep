@@ -1,44 +1,36 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using DAL;
 using DAL.Models;
 using PingTest;
 
-namespace MesOpC2
+namespace IpMonitor
 {
-    public class Program
+    public class Proces
     {
-        public static void Main(string[] args)
+        private readonly List<PingTester> _pingTest = new List<PingTester>();
+        private volatile bool _stop = false;
+
+        public Proces()
         {
-            List<string> ipaddresToMonitor = new List<string>
-            {
-                "10.0.161.37",
-                "10.0.161.47",
-                "10.0.161.22",
-                "10.0.161.48",
-                "10.0.161.26",
-                /*"10.0.161.43",*/ "10.0.161.56",
-                "10.0.161.39",
-                "10.0.161.45",
-                "10.0.161.49",
-                "10.0.34.25",
-                "10.0.200.66"
-            };
-            List<PingTester> pingTest = new List<PingTester>();
+            List<string> ipaddresToMonitor = File.ReadAllLines("IpToMonitor.txt").ToList();
             //init pingtester
             foreach (string ipAddress in ipaddresToMonitor)
-                pingTest.Add(new PingTester(ipAddress));
-
+                _pingTest.Add(new PingTester(ipAddress));
+        }
+        public void Start()
+        {
             //exec tests and save results to db
             using (var db = new MesOpcContext())
             {
-                while (true)
+                while (!_stop)
                 {
-                    foreach (PingTester tester in pingTest)
+                    foreach (PingTester tester in _pingTest)
                     {
                         bool testFailed = tester.Execute();
                         if (!testFailed)
@@ -53,6 +45,11 @@ namespace MesOpC2
                     Thread.Sleep(250);
                 }
             }
+        }
+
+        public void Stop()
+        {
+            _stop = true;
         }
     }
 }
