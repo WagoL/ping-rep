@@ -28,7 +28,7 @@ namespace IpMonitor
             {
                 eventLog1.WriteEntry("Error while loading IP's from txt file\n\n"+ioException,EventLogEntryType.Error);
             }
-            eventLog1.WriteEntry("Done Loading up.",EventLogEntryType.SuccessAudit);
+            eventLog1.WriteEntry("Done Loading up for these IP's\n"+_monitor.AllIps,EventLogEntryType.SuccessAudit);
         }
 
         protected override void OnStart(string[] args)

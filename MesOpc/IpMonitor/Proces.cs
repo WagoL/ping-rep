@@ -37,10 +37,10 @@ namespace IpMonitor
                     foreach (PingTester tester in _pingTest)
                     {
                         bool testFailed = tester.Execute();
-                        /*if (!testFailed)*/
+                        if (!testFailed)
                             db.Replies.Add(new Reply
                             {
-                                Available = testFailed,
+                                Available = false,
                                 IpAddress = tester.IpAddress,
                                 Timestamp = DateTime.Now
                             });

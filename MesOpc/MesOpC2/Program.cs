@@ -25,8 +25,8 @@ namespace MesOpC2
                 "10.0.161.39",
                 "10.0.161.45",
                 "10.0.161.49",
-                "10.0.34.25",
-                "10.0.200.66"
+                "10.0.34.25", //SBELMESOPCP01
+                "10.0.200.66" //FortiGate-NF01
             };
             List<PingTester> pingTest = new List<PingTester>();
             //init pingtester
