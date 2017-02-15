@@ -15,12 +15,15 @@ namespace IpMonitor
     {
         private readonly List<PingTester> _pingTest = new List<PingTester>();
         private volatile bool _stop = false;
+        private List<string> _ipaddresToMonitor;
+
+        public string AllIps => string.Join("\n", _ipaddresToMonitor.ToArray());
 
         public Proces()
         {
-            List<string> ipaddresToMonitor = File.ReadAllLines("IpToMonitor.txt").ToList();
+            _ipaddresToMonitor = File.ReadAllLines(IpMonitor.Properties.Settings.Default.FilePathMonitorList).ToList();
             //init pingtester
-            foreach (string ipAddress in ipaddresToMonitor)
+            foreach (string ipAddress in _ipaddresToMonitor)
                 _pingTest.Add(new PingTester(ipAddress));
         }
         public void Start()
@@ -28,15 +31,16 @@ namespace IpMonitor
             //exec tests and save results to db
             using (var db = new MesOpcContext())
             {
+                db.Database.Connection.ConnectionString = @"Data Source=sbelinfsqlp02\infp2012;Initial Catalog=Monitoring_INFRA;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
                 while (!_stop)
                 {
                     foreach (PingTester tester in _pingTest)
                     {
                         bool testFailed = tester.Execute();
-                        if (!testFailed)
+                        /*if (!testFailed)*/
                             db.Replies.Add(new Reply
                             {
-                                Available = false,
+                                Available = testFailed,
                                 IpAddress = tester.IpAddress,
                                 Timestamp = DateTime.Now
                             });
